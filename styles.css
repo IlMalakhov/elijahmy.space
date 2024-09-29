@@ -1,0 +1,568 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sacramento&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Fredoka&display=swap');
+
+@font-face {
+  font-family: 'Collegiate';
+  src: url('./fonts/Collegiate-wM1w.ttf') format('truetype');
+}
+
+body {
+  margin: 0;
+  position: absolute;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); /* Padding for notches */
+  background-image: url('./images/output.png');
+  background-size: 120%; /* Ensures the image covers the entire page */
+  background-position: center center; /* Starts at the top-left */
+  background-attachment:fixed;
+  background-repeat: no-repeat; /* Repeats the image vertically */
+
+  height: 100vh; /* Set the body to fill the viewport */
+  width: 100vw;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  color: #FFFFFF;
+  overflow: hidden;
+  
+  animation: zoomAndFlow 60s ease-in-out infinite,
+  pulse 8s ease-in-out infinite;
+}
+
+@supports (padding: env(safe-area-inset-top)) {
+  body {
+    padding-top: env(safe-area-inset-top);   /* Adjusts for the top notch */
+    padding-left: env(safe-area-inset-left); /* Adjusts for left side notch (for landscape mode) */
+    padding-right: env(safe-area-inset-right);/* Adjusts for right side notch */
+    padding-bottom: env(safe-area-inset-bottom); /* Adjusts for bottom notch */
+  }
+}
+
+@keyframes zoomAndFlow {
+  0% {
+    background-size: 120%; /* Zoomed in */
+    background-position: center 0; /* Start at the top */
+  }
+
+  25% {
+    background-size: 120%; /* Maintain zoom */
+    background-position: center 50%; /* Move down */
+  }
+
+  50% {
+    background-size: 120%; /* Maintain zoom */
+    background-position: center 100%; /* Move all the way down */
+  }
+
+  75% {
+    background-size: 120%; /* Maintain zoom */
+    background-position: center 50%; /* Move back up */
+  }
+
+  100% {
+    background-size: 120%; /* Maintain zoom */
+    background-position: center 0; /* Return to original position */
+  }
+}
+
+@keyframes pulse {
+  0% {
+    background-size: 120%;
+  }
+
+  50% {
+    background-size: 122%; /* Slight pulse/zoom in */
+  }
+
+  100% {
+    background-size: 120%; /* Zoom back to original size */
+  }
+}
+
+
+@media (max-width: 768px) {
+  body {
+    background-size: 250%; /* Enlarge image more on smaller screens */
+    animation: zoomAndFlowMobile 30s linear infinite, pulseMobile 5s ease-in-out infinite; /* Faster animations for mobile */
+  }
+
+  /* Faster, more noticeable flow for mobile */
+@keyframes zoomAndFlowMobile {
+    0% {
+      background-size: 250%; /* Start with a larger zoom */
+      background-position: center 0; /* Start at the top */
+    }
+
+    25% {
+      background-size: 250%; /* Maintain zoom */
+      background-position: center 40%; /* Move down faster */
+    }
+
+    50% {
+      background-size: 250%; /* Maintain zoom */
+      background-position: center 80%; /* Move all the way down */
+    }
+
+    75% {
+      background-size: 250%; /* Maintain zoom */
+      background-position: center 40%; /* Move back up slightly */
+    }
+
+    100% {
+      background-size: 250%; /* Return to starting zoom and position */
+      background-position: center 0;
+    }
+  }
+
+  /* Pulsing animation for mobile (slightly stronger) */
+  @keyframes pulseMobile {
+    0% {
+      background-size: 250%;
+    }
+
+    50% {
+      background-size: 260%; /* Slightly larger pulse on mobile */
+    }
+
+    100% {
+      background-size: 250%;
+    }
+  }
+}
+
+h1 {
+  font-family: "Sacramento", cursive;
+  font-size: 4rem;
+  height: 3rem;
+}
+
+h2 {
+  font-weight: 250;
+  font-family: Fredoka, -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+hr {
+  border-style: none;
+  border-top: dotted white;
+  border-width: 0.75rem;
+  width: 10rem;
+}
+
+.kindabold {
+  font-weight: 500;
+  color: #fff5fa;
+}
+
+.top-container {
+  padding-top: 15rem;
+  padding-bottom: 5rem;
+}
+
+.middle-container {
+  padding-top: 1rem;
+  font-weight: 300;
+}
+
+.top-cloud {
+  position: relative;
+  left: 22.5rem;
+  animation: move 6s ease-in-out infinite;
+  animation-duration: 8s;
+}
+
+.bottom-cloud {
+  position: relative;
+  right: 22.5rem;
+  top: 1rem;
+  animation: move 6s ease-in-out infinite;
+  animation-delay: -1s;
+}
+
+.main-text {
+  font-weight: 220;
+  font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  letter-spacing: 4px;
+  word-spacing: 2px;
+  padding: 15px;
+  border-radius: 30px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);  /* Adds a subtle shadow to the text */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  line-height: 1.3;
+  transition: all 0.6s ease;
+  
+  width: 60%;
+  max-width: 600px; /* Maximum width for larger screens */
+  margin: 0px auto; /* Centers the paragraph on the page */ /* Centers the text inside the paragraph */
+}
+
+.main-text:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);  /* Increases the shadow */
+    transform: scale(1.05);  /* Slightly enlarges the text on hover */
+}
+
+.soundcloud-container {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            margin: 10px; /* Optional margin from the edges */
+            z-index: 1000; /* Ensure it stays on top */
+            width: 204px; /* Adjust the width as needed */
+            border-radius: 20px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 67px;
+            border: none;
+            opacity: 0.15; /* Adjust this value (0 to 1) for transparency */
+            transition: all 0.6s; /* Smooth transition for hover effect */
+        }
+        
+.soundcloud-container:hover iframe {
+            opacity: 1;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);  /* Increases the shadow */
+            transform: scale(1.03);  /* Slightly enlarges the text on hover */
+        }
+
+.click-me {
+    margin-top: 3rem;
+    padding: 0.2rem;
+    height: 3rem;
+    width: 8rem;
+    background-color: white;
+    color: white;
+    border-radius: 1px;
+}
+
+.click-me,
+.click-me:after {
+  width: 150px;
+  height: 76px;
+  line-height: 78px;
+  font-size: 20px;
+  font-family: 'Fredoka', sans-serif;
+  line-height: 1.5;
+  text-align: center;
+  background: linear-gradient(45deg, #00000050 5%, #00000050 5%);
+  border: 0;
+  color: #fff;
+  letter-spacing: 3px;
+  box-shadow: 4px 0px 0px #B34270;
+  outline: transparent;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  transition: transform 1.5s cubic-bezier(0.25, 1, 0.5, 1),
+  box-shadow 1.5s cubic-bezier(0.25, 1, 0.5, 1),
+  border-radius 1.5s cubic-bezier(0.25, 1, 0.5, 1);
+  cursor: pointer;
+}
+
+.click-me:after {
+  --slice-0: inset(50% 50% 50% 50%);
+  --slice-1: inset(80% -6px 0 0);
+  --slice-2: inset(50% -6px 30% 0);
+  --slice-3: inset(10% -6px 85% 0);
+  --slice-4: inset(40% -6px 43% 0);
+  --slice-5: inset(80% -6px 5% 0);
+  
+  content: 'Çličʞ Mè';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 3%, #8300ff 3%, #ff0096 5%, #8300ff 5%);
+  text-shadow: -3.5px -3.5px 0px #E95670, 3.5px 3.5px 0px #B34270;
+  clip-path: var(--slice-0);
+}
+
+.click-me:hover {
+  transform: scale(1.2);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+}
+    
+.click-me:hover:after {
+  animation: 1.3s glitch;
+  animation-timing-function: steps(2, end);
+}
+
+@keyframes slam {
+            0% {
+                transform: scale(1) translateY(10px 0);
+            }
+            50% {
+                transform: scale(0.9) translateY(30px);
+            }
+            100% {
+                transform: scale(1.1) translateY(10px 0);
+            }
+        }
+
+.slam {
+    animation: slam 0.5s ease;
+}
+
+@keyframes glitch {
+  0% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, -10px);
+  }
+  10% {
+    clip-path: var(--slice-3);
+    transform: translate(10px, 10px);
+  }
+  20% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 10px);
+  }
+  30% {
+    clip-path: var(--slice-3);
+    transform: translate(0px, 5px);
+  }
+  40% {
+    clip-path: var(--slice-2);
+    transform: translate(-5px, 0px);
+  }
+  50% {
+    clip-path: var(--slice-3);
+    transform: translate(5px, 0px);
+  }
+  60% {
+    clip-path: var(--slice-4);
+    transform: translate(5px, 10px);
+  }
+  70% {
+    clip-path: var(--slice-2);
+    transform: translate(-10px, 10px);
+  }
+  80% {
+    clip-path: var(--slice-5);
+    transform: translate(20px, -10px);
+  }
+  90% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 0px);
+  }
+  100% {
+    clip-path: var(--slice-1);
+    transform: translate(0);
+  }
+}
+
+@media (min-width: 768px) {
+  .click-me,
+  .click-me:after {
+    width: 200px;
+    height: 86px;
+    line-height: 88px;
+  }
+}
+
+.rocket {
+    position: absolute;
+    width: 10px;
+    height: 45px;
+    background-color: #ff6f61;
+    bottom: 0;
+    left: 50%; /* Start from the center */
+    transform: translateX(-50%);
+    animation: launch 1s forwards, rocket-launch 4s ease-in-out forwards; /* Add launch animation */
+    border-radius: 50% 50% 2px 2px; /* Rounded edges for the rocket */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for a 3D effect */
+}
+
+@keyframes rocket-launch {
+    0% {
+        transform: translateY(0) scale(1); /* Start at normal size */
+        opacity: 1;
+    30% {
+        transform: translateY(-130px) scale(1); /* Start at normal size */
+        opacity: 1
+    }
+    }
+    70% {
+        transform: translateY(-200px) scale(1); /* Fly upwards, normal size */
+        opacity: 1;
+    }
+    90% {
+        transform: translateY(-275px) scale(0.6); /* Start shrinking */
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-440px) scale(0.2); /* Rocket becomes a dot */
+        opacity: 0.5; /* Optionally fade out */
+    }
+}
+
+@keyframes launch {
+    0% {
+        transform: scale(1) translateX(-50%) translateY(0);
+    }
+    100% {
+        transform: scale(0.5) translateX(-50%) translateY(-440px); /* Adjust height for launch */
+    }
+}
+
+#fireworks-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.firework {
+    position: absolute;
+    border-radius: 50%;
+    animation: explode 1.5s ease-out forwards;
+    transform: translate(-50%, -50%);
+}
+
+.sparkle {
+    position: absolute;
+    border-radius: 50%;
+    animation: sparkle 1.7s ease-out forwards;
+}
+
+.firework {
+    position: absolute;
+    pointer-events: none; /* Prevent mouse events */
+    border-radius: 50%;
+    opacity: 1;
+    animation: explosion-animation 2s forwards; /* Explosion animation */
+}
+
+@keyframes explosion-animation {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    50% {
+        transform: translate(-50%, -50%) scale(2)
+    }
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(4);
+        opacity: 0;
+    }
+}
+
+@keyframes sparkle {
+    0% {
+        transform: scale(0) translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.6) translateY(20px);
+        opacity: 0;
+    }
+}
+
+.explosion {
+    position: absolute;
+    background: radial-gradient(circle, grey 0%, white 90%, transparent 60%);
+    border-radius: 80%;
+    animation: cartoon-explosion-animation 0.45s forwards; /* Explosion animation */
+    pointer-events: none; /* Prevent mouse events */
+}
+
+@keyframes cartoon-explosion-animation {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.5); /* Expand the explosion */
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(0); /* Fade out */
+        opacity: 0;
+    }
+}
+
+.footer-link {
+  color: #ffebf5;
+  padding: 0.25rem;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: #94878d;
+  font-weight: 500;
+}
+
+.bottom-container {
+  position: absolute;
+  bottom: 2rem;
+  width: 100%;
+}
+
+.link-telegram {
+    font-family: 'Open Sans', sans-serif;
+    height: 25px;
+    width: 100px;
+    display: inline-block;
+    padding: 5px 5px;
+    font-weight: bold;
+    background-color: #24A1DE;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: background-color 0.5s, transform 0.3s ease, box-shadow 0.6s ease;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.28);
+    line-height: 1.5;
+    transform-origin: center
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.link-telegram:hover {
+    background-color: white;
+    color: #24A1DE;
+    box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.6),
+                0px 0px 20px rgba(255, 255, 255, 0.5);
+    transform: scale(1.1);
+}
+
+.link-github {
+    font-family: 'Collegiate', sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+    height: 25px;
+    width: 100px;
+    display: inline-block;
+    padding: 5px 5px;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: background-color 0.5s, transform 0.3s ease, box-shadow 0.6s ease;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.28);
+    line-height: 1.5;
+    transform-origin: center
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.link-github:hover {
+    background-color: white;
+    color: black;
+    box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.6),
+                0px 0px 20px rgba(255, 255, 255, 0.5);
+    transform: scale(1.1);
+}
+
+@keyframes move {
+  50% {
+    transform: translateY(-30px);
+  }
+}

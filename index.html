@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Elijah says hi!</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body>
+    <div id="fireworks-container"></div>
+
+    <script src="./oneko.js"></script>
+    <div class="top-container">
+      <img class="top-cloud" src="./images/uwucloud.png" alt="cloudy" />
+      <h1>Hi, I'm Elijah</h1>
+      <h2>Saint-Petersburg, 22</h2>
+      <img class="bottom-cloud" src="./images/uwucloud2.png" alt="cloudy" />
+      <p class="main-text">
+          currently studying Business Analytics and Big Data, love piano music, love programming
+      </p>
+    </div>
+
+    <hr>
+        <button class="click-me" role="button">Click me</button>
+        
+        <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const button = document.querySelector('.click-me');
+
+        button.addEventListener('click', function() {
+            // Add the slam class to trigger the animation
+            button.classList.add('slam');
+
+            // Remove the class after the animation ends
+            setTimeout(() => {
+                button.classList.remove('slam');
+            }, 500); // Match this timeout with the animation duration
+        });
+    });
+        </script>
+    </hr>
+
+    <div class="middle-container">
+      <div class="profile">
+        <!-- <img src="" alt=""> -->
+        <p>
+            
+        </p>
+        <p>
+
+        </p>
+      </div>
+    </div>
+
+
+    <div class="bottom-container">
+        <a href="https://t.me/nuclearsalmon" class=link-telegram target="_blank">Telegram</a>
+        <a href="https://github.com/IlMalakhov" class=link-github target="_blank">GitHub</a>
+    </div>
+    <script src="./fireworks.js"></script>
+    
+    <div class="soundcloud-container">
+    <iframe scrolling="no" allow="autoplay" 
+    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1320878356&color=%23e95670&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false">
+    </iframe>
+</div>
+  </body>
+</html>
