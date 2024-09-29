@@ -177,7 +177,6 @@ body {
 }
 }
 
-
 h1 {
   font-family: "Sacramento", cursive;
   font-size: 4rem;
@@ -204,8 +203,87 @@ hr {
 .middle-container {
   position: relative;
   font-weight: 300;
-  padding-top: 10%;
 }
+
+.text-container {
+  margin-bottom: 5%;
+}
+
+.footer-link {
+  color: #ffebf5;
+  padding: 0.25rem;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: #94878d;
+  font-weight: 500;
+}
+
+.bottom-container {
+  position: absolute;
+  bottom: 2rem;
+  width: 100%;
+}
+
+.link-telegram {
+    font-family: 'Open Sans', sans-serif;
+    height: 25px;
+    width: 100px;
+    display: inline-block;
+    padding: 5px 5px;
+    font-weight: bold;
+    background-color: #24A1DE;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: background-color 0.5s, transform 0.3s ease, box-shadow 0.6s ease;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.28);
+    line-height: 1.5;
+    transform-origin: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.link-telegram:hover {
+    background-color: white;
+    color: #24A1DE;
+    box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.6),
+                0px 0px 20px rgba(255, 255, 255, 0.5);
+    transform: scale(1.1);
+}
+
+.link-github {
+    font-family: 'Collegiate', sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+    height: 25px;
+    width: 100px;
+    display: inline-block;
+    padding: 5px 5px;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: background-color 0.5s, transform 0.3s ease, box-shadow 0.6s ease;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.28);
+    line-height: 1.5;
+    transform-origin: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.link-github:hover {
+    background-color: white;
+    color: black;
+    box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.6),
+                0px 0px 20px rgba(255, 255, 255, 0.5);
+    transform: scale(1.1);
+}
+
 
 .top-cloud {
   position: relative;
@@ -427,11 +505,6 @@ hr {
         opacity: 1;
     }
 
-    30% {
-        transform: translateY(-130px) scale(1);
-        opacity: 1;
-    }
-
     70% {
         transform: translateY(-200px) scale(1);
         opacity: 1;
@@ -490,16 +563,12 @@ hr {
 
 @keyframes explosion-animation {
     0% {
-        transform: translate(-50%, -50%) scale(1);
+        transform: translate(-50%, -50%) scale(1.2);
         opacity: 1;
     }
 
-    50% {
-        transform: translate(-50%, -50%) scale(2)
-    }
-
     100% {
-        transform: translate(-50%, -50%) scale(4);
+        transform: translate(-50%, -50%) scale(5);
         opacity: 0;
     }
 }
@@ -526,91 +595,16 @@ hr {
 @keyframes cartoon-explosion-animation {
     0% {
         transform: scale(1);
-        opacity: 0.5;
+        opacity: 0.2;
     }
     50% {
         transform: scale(1.5); 
-        opacity: 0.5;
+        opacity: 0.4;
     }
     100% {
         transform: scale(0); 
         opacity: 0;
     }
-}
-
-.footer-link {
-  color: #ffebf5;
-  padding: 0.25rem;
-  text-decoration: none;
-}
-
-.footer-link:hover {
-  color: #94878d;
-  font-weight: 500;
-}
-
-.bottom-container {
-  position: absolute;
-  bottom: 2rem;
-  width: 100%;
-}
-
-.link-telegram {
-    font-family: 'Open Sans', sans-serif;
-    height: 25px;
-    width: 100px;
-    display: inline-block;
-    padding: 5px 5px;
-    font-weight: bold;
-    background-color: #24A1DE;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 30px;
-    transition: background-color 0.5s, transform 0.3s ease, box-shadow 0.6s ease;
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.28);
-    line-height: 1.5;
-    transform-origin: center;
-    margin-left: 1rem;
-    margin-right: 1rem;
-}
-
-.link-telegram:hover {
-    background-color: white;
-    color: #24A1DE;
-    box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.6),
-                0px 0px 20px rgba(255, 255, 255, 0.5);
-    transform: scale(1.1);
-}
-
-.link-github {
-    font-family: 'Collegiate', sans-serif;
-    font-size: 18px;
-    letter-spacing: 1px;
-    height: 25px;
-    width: 100px;
-    display: inline-block;
-    padding: 5px 5px;
-    font-weight: bold;
-    background-color: black;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 30px;
-    transition: background-color 0.5s, transform 0.3s ease, box-shadow 0.6s ease;
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.28);
-    line-height: 1.5;
-    transform-origin: center;
-    margin-left: 1rem;
-    margin-right: 1rem;
-}
-
-.link-github:hover {
-    background-color: white;
-    color: black;
-    box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.6),
-                0px 0px 20px rgba(255, 255, 255, 0.5);
-    transform: scale(1.1);
 }
 
 @keyframes move {
