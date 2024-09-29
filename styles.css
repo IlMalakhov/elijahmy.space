@@ -3,21 +3,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka&display=swap');
 
 @font-face {
-  font-family: 'Collegiate';
+  font-family: 'Collegiate'; /*For GitHub logo*/
   src: url('./fonts/Collegiate-wM1w.ttf') format('truetype');
 }
 
 body {
+  position: relative;
   margin: 0;
-  position: absolute;
   padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); /* Padding for notches */
   background-image: url('./images/output.png');
-  background-size: 120%; /* Ensures the image covers the entire page */
-  background-position: center center; /* Starts at the top-left */
+  background-size: 120%;
+  background-position: center center;
   background-attachment:fixed;
-  background-repeat: no-repeat; /* Repeats the image vertically */
+  background-repeat: no-repeat;
 
-  height: 100vh; /* Set the body to fill the viewport */
+  height: 100vh;
   width: 100vw;
   text-align: center;
   font-family: "Roboto", sans-serif;
@@ -30,10 +30,10 @@ body {
 
 @supports (padding: env(safe-area-inset-top)) {
   body {
-    padding-top: env(safe-area-inset-top);   /* Adjusts for the top notch */
-    padding-left: env(safe-area-inset-left); /* Adjusts for left side notch (for landscape mode) */
-    padding-right: env(safe-area-inset-right);/* Adjusts for right side notch */
-    padding-bottom: env(safe-area-inset-bottom); /* Adjusts for bottom notch */
+    padding-top: env(safe-area-inset-top);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    padding-bottom: env(safe-area-inset-bottom);
   }
 }
 
@@ -79,13 +79,18 @@ body {
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   body {
     background-size: 250%; /* Enlarge image more on smaller screens */
     animation: zoomAndFlowMobile 30s linear infinite, pulseMobile 5s ease-in-out infinite; /* Faster animations for mobile */
   }
 
-  /* Faster, more noticeable flow for mobile */
+  @media (max-width: 500px) {
+    body {
+      background-size: 350%; /* Enlarge image more on smaller screens */
+      animation: zoomAndFlowMobile2 30s linear infinite, pulseMobile2 5s ease-in-out infinite; /* Faster animations for mobile */
+    }
+
 @keyframes zoomAndFlowMobile {
     0% {
       background-size: 250%; 
@@ -120,7 +125,7 @@ body {
     }
 
     50% {
-      background-size: 260;
+      background-size: 260%;
     }
 
     100% {
@@ -128,6 +133,50 @@ body {
     }
   }
 }
+
+@keyframes zoomAndFlowMobile2 {
+  0% {
+    background-size: 350%; 
+    background-position: center 0; 
+  }
+
+  25% {
+    background-size: 350%; 
+    background-position: center 40%;
+  }
+
+  50% {
+    background-size: 350%; 
+    background-position: center 80%; 
+  }
+
+  75% {
+    background-size: 350%; 
+    background-position: center 40%; 
+  }
+
+  100% {
+    background-size: 350%;
+    background-position: center 0;
+  }
+}
+
+
+@keyframes pulseMobile2 {
+  0% {
+    background-size: 350%;
+  }
+
+  50% {
+    background-size: 360%;
+  }
+
+  100% {
+    background-size: 350%;
+  }
+}
+}
+
 
 h1 {
   font-family: "Sacramento", cursive;
@@ -147,37 +196,34 @@ hr {
   width: 10rem;
 }
 
-.kindabold {
-  font-weight: 500;
-  color: #fff5fa;
-}
-
 .top-container {
   padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-bottom: 5%;
 }
 
 .middle-container {
-  padding-top: 1rem;
+  position: relative;
   font-weight: 300;
+  padding-top: 10%;
 }
 
 .top-cloud {
   position: relative;
-  left: 22.5rem;
+  left: 25%;
   animation: move 6s ease-in-out infinite;
   animation-duration: 8s;
 }
 
 .bottom-cloud {
   position: relative;
-  right: 22.5rem;
+  right: 30%;
   top: 1rem;
   animation: move 6s ease-in-out infinite;
   animation-delay: -1s;
 }
 
 .main-text {
+  position: relative;
   font-weight: 220;
   font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 18px;
@@ -190,7 +236,7 @@ hr {
   line-height: 1.3;
   transition: all 0.6s ease;
   
-  width: 60%;
+  width: 70%;
   max-width: 600px;
   margin: 0px auto; 
 }
