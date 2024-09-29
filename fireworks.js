@@ -14,60 +14,50 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Button clicked');
         createRocket();
         
-        // Add the slam class to trigger the animation
         button.classList.add('slam');
 
-        // Remove the class after the animation ends
         setTimeout(() => {
             button.classList.remove('slam');
-        }, 500); // Match this timeout with the animation duration
+        }, 500);
     });
     
     function createRocket() {
         console.log('Creating rocket');
         
-        // Create firework rocket
         const rocket = document.createElement('div');
         rocket.className = 'rocket';
         
-        // Generate random x position
         const c = Math.random() * window.innerWidth;
         
-        // Position the rocket at the bottom of the screen
         rocket.style.left = `${c}px`;
-        rocket.style.bottom = '0px'; // Start at the bottom
-        rocket.style.animationDuration = '1.5s'; // Time to reach the top
+        rocket.style.bottom = '0px'; 
+        rocket.style.animationDuration = '1.5s';
 
         fireworksContainer.appendChild(rocket);
 
-        // Launch the rocket
         rocket.addEventListener('animationend', function() {
-            // Remove the rocket and create explosion
             rocket.remove();
             createCartoonExplosion(c)
-            createFirework(c); // Create explosion at the rocket's x position
+            createFirework(c);
         });
 
-        // Trigger rocket launch animation
         rocket.classList.add('launch');
         
     function createCartoonExplosion(c) {
         console.log('Creating cartoon explosion at:', c);
         
-        // Create explosion element
         const explosion = document.createElement('div');
         explosion.className = 'explosion';
         
-        const size = 50; // Size of the explosion
+        const size = 50; 
         explosion.style.width = `${size}px`;
         explosion.style.height = `${size}px`;
-        explosion.style.left = `${c - size / 2}px`; // Center explosion at the rocket's x position
-        explosion.style.top = '50%'; // Place explosion in the middle of the screen
+        explosion.style.left = `${c - size / 2}px`;
+        explosion.style.top = '50%';
 
         fireworksContainer.appendChild(explosion);
         console.log('Cartoon explosion added to container');
 
-        // Remove explosion after animation ends
         explosion.addEventListener('animationend', function() {
             explosion.remove();
             console.log('Cartoon explosion removed');
@@ -81,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
         firework.className = 'firework';
         
 
-        const size = Math.random() * 600 + 250; // Increased size: Random between 200 and 300
+        const size = Math.random() * 600 + 250;
         
         const halfSize = size / 2;
         const x = Math.random() * (window.innerWidth - size) + halfSize;
@@ -100,19 +90,17 @@ document.addEventListener('DOMContentLoaded', function() {
         `rgba(214, 123, 168, 0.8)`,   // Indigo
     ];
 
-    // Randomly select one of the colors from the array
     const color = colors[Math.floor(Math.random() * colors.length)];
 
-        // Create sparkles
-        for (let i = 0; i < 5; i++) { // Increased number of sparkles
+        for (let i = 0; i < 5; i++) {
             const sparkle = document.createElement('div');
             sparkle.className = 'sparkle';
-            sparkle.style.width = `${Math.random() * 250 + 80}px`; // Slightly larger sparkles
+            sparkle.style.width = `${Math.random() * 250 + 80}px`;
             sparkle.style.height = sparkle.style.width;
-            sparkle.style.backgroundColor = color; // More opaque
+            sparkle.style.backgroundColor = color;
             sparkle.style.left = `${Math.random() * 90}%`;
             sparkle.style.top = `${Math.random() * 90}%`;
-            sparkle.style.animationDuration = `${Math.random() * 25 + 15}s`; // Longer animation
+            sparkle.style.animationDuration = `${Math.random() * 25 + 15}s`;
             sparkle.style.animationTimingFunction = 'ease-out';
             firework.appendChild(sparkle);
         }
@@ -120,7 +108,6 @@ document.addEventListener('DOMContentLoaded', function() {
         fireworksContainer.appendChild(firework);
         console.log('Firework added to container');
 
-        // Remove firework after animation ends
         firework.addEventListener('animationend', function() {
             firework.remove();
             console.log('Firework removed');
