@@ -258,6 +258,12 @@ hr {
     transform: scale(1.1);
 }
 
+.link-telegram:active {
+  transform: scale(0.9);
+  box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.28),
+              0px 0px 20px rgba(255, 255, 255, 0.28);
+}
+
 .link-github {
     font-family: 'Collegiate', sans-serif;
     font-size: 18px;
@@ -288,6 +294,11 @@ hr {
     transform: scale(1.1);
 }
 
+.link-github:active {
+  transform: scale(0.9);
+  box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.28),
+              0px 0px 20px rgba(255, 255, 255, 0.28);
+}
 
 .top-cloud {
   position: relative;
@@ -326,6 +337,12 @@ hr {
 .main-text:hover {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);  /* Increases the shadow */
     transform: scale(1.05);  /* Slightly enlarges the text on hover */
+}
+
+.main-text:active {
+  transform: scale(0.9);
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.28),
+              0px 0px 0px rgba(0, 0, 0, 0.28);
 }
 
 .soundcloud-container {
